@@ -1,0 +1,11 @@
+{
+    "baseUrl": "http://react-app-monica.s3-website-ap-southeast-1.amazonaws.com/",
+    "nodeVersion": "system",
+    "viewportHeight": 700,
+    "viewportWidth": 425,
+    "pageLoadTimeout": 70000,
+    "chromeWebSecurity": false,
+    "requestTimeout": 30000,
+    "projectId": "yjd67p",
+    "screenshotsFolder": "/home/govindsingh/screenshots"
+}
