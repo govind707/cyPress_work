@@ -6,6 +6,5 @@
     "pageLoadTimeout": 70000,
     "chromeWebSecurity": false,
     "requestTimeout": 30000,
-    "projectId": "yjd67p",
-    "screenshotsFolder": "/home/govindsingh/screenshots"
+    "projectId": "yjd67p"
 }

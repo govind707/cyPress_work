@@ -125,7 +125,7 @@ describe("KreditBee App", () => {
 
         cy.get('#app > div > div > div > div.BPage__BodyCon-hjhObv.cFgZAX > div > form > div:nth-child(2) > table > tbody > tr > td.BInput__ErrCon-bianUW.kURtGg > input')
         .should('have.attr','placeholder',"Amazon  account password")
-        .type(Cypress.env('pass'))
+        .type(Cypress.env('Pass'),{log:false})
 
         cy.server()
         cy.route({
