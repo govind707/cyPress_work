@@ -1,0 +1,21 @@
+{
+    "code": "200",
+    "message": "Success",
+    "model": {
+        "blockStatus": "enable",
+        "offerType": "mandatory",
+        "availableOffers": [
+            {
+                "offerName": "basicMobAuth",
+                "offerStatus": "processing",
+                "reason": "",
+                "offers": null,
+                "Icon": "icmobile_verify",
+                "Title": "Verifying...",
+                "Desc": "You are not allowed to verify mobile number",
+                "ErrorDesc": "Verification failed, please try again",
+                "Operator": "idea"
+            }
+        ]
+    }
+}

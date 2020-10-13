@@ -1,0 +1,95 @@
+{
+    "code": "200",
+    "message": "Success",
+    "model": {
+        "blockStatus": "enable",
+        "offerType": "mandatory",
+        "availableOffers": [
+            {
+                "offerName": "perfios",
+                "offerStatus": "new",
+                "reason": "",
+                "offers": null,
+                "Icon": "icwallet-pd",
+                "Title": "Verify Income",
+                "Desc": "Provide Paytm account credentials to sync your wallet information",
+                "ErrorDesc": "",
+                "Operator": ""
+            },
+            {
+                "offerName": "basicMobAuth",
+                "offerStatus": "new",
+                "reason": "",
+                "offers": null,
+                "Icon": "icmobile_verify",
+                "Title": "Mobile Number Verification",
+                "Desc": "Re-verify your official mobile number",
+                "ErrorDesc": "Verification failed, please try again",
+                "Operator": "idea"
+            },
+            {
+                "offerName": "advanceMobAuth",
+                "offerStatus": "new",
+                "reason": "",
+                "offers": null,
+                "Icon": "icmobile_verify",
+                "Title": "Advanced Mobile Authentication",
+                "Desc": "Re-verify your official mobile number",
+                "ErrorDesc": "Verification failed, please try again",
+                "Operator": "idea,jio,airtel,vodafone"
+            },
+            {
+                "offerName": "salarySlip",
+                "offerStatus": "new",
+                "reason": "",
+                "offers": null,
+                "Icon": "icwallet-pd",
+                "Title": "Salary Slip",
+                "Desc": "Provide Paytm account credentials to sync your wallet information",
+                "ErrorDesc": "",
+                "Operator": ""
+            },
+            {
+                "offerName": "ecommConnect",
+                "offerStatus": "new",
+                "reason": "",
+                "offers": [
+                    {
+                        "OfferStatus": "new",
+                        "OfferName": "amazonScrapping",
+                        "Reason": "",
+                        "Icon": "icwallet-pd",
+                        "Title": "Ecomm Connect details",
+                        "Desc": "Provide Paytm account credentials to sync your wallet information",
+                        "ErrorDesc": ""
+                    },
+                    {
+                        "OfferStatus": "new",
+                        "OfferName": "flipkartScrapping",
+                        "Reason": "",
+                        "Icon": "icwallet-pd",
+                        "Title": "Ecomm Connect details",
+                        "Desc": "Provide Paytm account credentials to sync your wallet information",
+                        "ErrorDesc": ""
+                    }
+                ],
+                "Icon": "",
+                "Title": "Ecomm Scrapping",
+                "Desc": "Provide amazon account details ",
+                "ErrorDesc": "icwallet-pd",
+                "Operator": ""
+            },
+            {
+                "offerName": "paytmScrapping",
+                "offerStatus": "new",
+                "reason": "",
+                "offers": null,
+                "Icon": "icwallet-pd",
+                "Title": "Sync Wallet details",
+                "Desc": "Provide Paytm account credentials to sync your wallet information",
+                "ErrorDesc": "",
+                "Operator": ""
+            }
+        ]
+    }
+}

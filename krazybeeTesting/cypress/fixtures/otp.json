@@ -1,0 +1,8 @@
+{
+    "code": "200",
+    "msg": "Success",
+    "model": {
+        "otpDigits": "6",
+        "token": "govindThakur"
+    }
+}
