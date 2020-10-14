@@ -128,7 +128,7 @@ describe("EcommScrapping-Flipkart Testing", () => {
         cy.get('#app > div > div > div > div.BPage__BodyCon-hjhObv.cFgZAX > div > form > button')
         .should('have.text','Submit')
         .should('have.css','background-color','rgb(253, 213, 53)')
-        //.click()
+        .click()
     })    
 
 
