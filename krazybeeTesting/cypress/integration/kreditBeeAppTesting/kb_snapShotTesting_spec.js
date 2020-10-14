@@ -5,7 +5,7 @@
 
 describe("kreditBee App Snapshot Testing ", () => {
 
-    it("snapshots", () => {
+    it.skip("snapshots", () => {
         cy.visit('/' + 'login', { failOnStatusCode: false })
 
         cy.wait(2000)
