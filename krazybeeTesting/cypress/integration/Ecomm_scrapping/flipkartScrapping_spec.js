@@ -2,7 +2,7 @@ describe("EcommScrapping-Flipkart Testing", () => {
 
 
 
-    it("Flipkart 'Forward+Backward' Flow Testing", () => {
+    it.only("Flipkart 'Forward+Backward' Flow Testing", () => {
 
 
         cy.visit('/' + 'login', { failOnStatusCode: false })
@@ -14,34 +14,36 @@ describe("EcommScrapping-Flipkart Testing", () => {
 
        //**********************login*********************
 
-        cy.get('#app > div > div > div > div > div:nth-child(3) > div.skins__LoginBtnCon-fIoCIg.bfKfLI > div > div > div:nth-child(3) > div > a > a > span') 
-        .should('contain','Login with Registered Mobile')
-        .click()
+    //     cy.get('#app > div > div > div > div > div:nth-child(3) > div.skins__LoginBtnCon-fIoCIg.bfKfLI > div > div > div:nth-child(3) > div > a > a > span') 
+    //     .should('contain','Login with Registered Mobile')
+    //     .click()
 
 
-        cy.get('#app > div > div > div > div.BPage__BodyCon-hjhObv.giSHwH > div > form > div.BInput__InCon-UCTdV.JspVP > table > tbody > tr > td.BInput__ErrCon-bianUW.kURtGg > input')
-        .should('have.attr','placeholder','Enter your registered mobile number')
-        .type(7477221726)
+    //     cy.get('#app > div > div > div > div.BPage__BodyCon-hjhObv.giSHwH > div > form > div.BInput__InCon-UCTdV.JspVP > table > tbody > tr > td.BInput__ErrCon-bianUW.kURtGg > input')
+    //     .should('have.attr','placeholder','Enter your registered mobile number')
+    //     .type(7477221726)
 
-        cy.get('#app > div > div > div > div.BPage__BodyCon-hjhObv.giSHwH > div > form > div.skins__OtpCon-gQOXOO.eVXRnx > button')
-        .should('contain','Get OTP')
-        .click()
+    //     cy.get('#app > div > div > div > div.BPage__BodyCon-hjhObv.giSHwH > div > form > div.skins__OtpCon-gQOXOO.eVXRnx > button')
+    //     .should('contain','Get OTP')
+    //     .click()
 
-       // cy.screenshot('Enter_otp')
+    //    // cy.screenshot('Enter_otp')
 
-        cy.wait(15000)
+    //     cy.wait(15000)
 
-        cy.get('#app > div > div > div > div.BPage__BodyCon-hjhObv.giSHwH > div > form > button')
-        .should('contain','Submit')
-        .click()
+    //     cy.get('#app > div > div > div > div.BPage__BodyCon-hjhObv.giSHwH > div > form > button')
+    //     .should('contain','Submit')
+    //     .click()
 
-        cy.wait(2000)
+    //     cy.wait(2000)
 
         // *****************home********************
 
         cy.get('.skins__PdtListing-QkWkM.BcfPC', { failOnStatusCode: false }).as('loan_info')
 
        // cy.screenshot('home')
+
+       cy.matchImageSnapshot('home')
 
         cy.get('@loan_info')
             .children()
@@ -58,6 +60,8 @@ describe("EcommScrapping-Flipkart Testing", () => {
         cy.get('@profile_summary')
             .children()
             .should('have.length', 6)
+        
+        cy.matchImageSnapshot('profile_summary')
 
         cy.get('span.skins__ProgressLine-iqbNez.dUHnXo')
             .should('have.css', 'background-color', 'rgb(253, 213, 53)')
@@ -72,7 +76,7 @@ describe("EcommScrapping-Flipkart Testing", () => {
 
         // *********************profile/Additional_Information*****************************
 
-        cy.screenshot('Flipkart-Ecom-is-not-Done-yet')
+       // cy.screenshot('Flipkart-Ecom-is-not-Done-yet')
         cy.get('#app > div > div > div > div > div.BPage__BodyCon-hjhObv.giSHwH > div.skins__SummaryCon-eWQpKA.gXiRNK > div:nth-child(5) > div').as('profile_addInfo_ecom')
 
 
@@ -82,6 +86,8 @@ describe("EcommScrapping-Flipkart Testing", () => {
         cy.get('@profile_addInfo_ecom')
             .children()
             .should('have.length', 2)
+        
+        cy.matchImageSnapshot('profile_additional_info')
 
         cy.get('@profile_addInfo_ecom')
             .children()
@@ -116,6 +122,8 @@ describe("EcommScrapping-Flipkart Testing", () => {
 
          cy.wait(1000)
 
+        cy.matchImageSnapshot('Amazaon_flipkart_optn') 
+
         cy.get('@amazon-flipkart')
             .children()
             .eq(2)
@@ -135,6 +143,9 @@ describe("EcommScrapping-Flipkart Testing", () => {
             .children() //tbody
             .children() // rows containing paragraphs
             .should('have.length', 2)
+            
+            
+        cy.matchImageSnapshot('flipkartSync')    
 
 
         // Test for terms and conditions
@@ -146,10 +157,12 @@ describe("EcommScrapping-Flipkart Testing", () => {
         .should('eq','http://react-app-monica.s3-website-ap-southeast-1.amazonaws.com/store/tnc')
         
 
+       
         cy.wait(1000)
 
       //  cy.screenshot('Terms-nd-Conditions')
 
+        cy.matchImageSnapshot('Terms and Conditions')
         cy.get('#app > div > div > div > div.BPage__HeaderCon-kVnWyQ.hklIgC > img')   // // coming back to original flow
         .click()
 
@@ -163,11 +176,14 @@ describe("EcommScrapping-Flipkart Testing", () => {
 
         cy.wait(1000)
 
+        cy.matchImageSnapshot('privacy_policy')
+
        // cy.screenshot('Privacy-Policy')
 
         cy.get('#app > div > div > div > div.BPage__HeaderCon-kVnWyQ.hklIgC > img')   // coming back to original flow
         .click()
 
+        
 
         cy.get('#app > div > div > div > div.BPage__BodyCon-hjhObv.giSHwH > button')
             .should('have.css', 'background-color', 'rgb(253, 213, 53)')
@@ -206,6 +222,8 @@ describe("EcommScrapping-Flipkart Testing", () => {
 
        //cy.screenshot('FlipkartForm')    
 
+       cy.matchImageSnapshot('flipkart_form')
+
         cy.get('@form')
             .children()
             .eq(3)
@@ -237,8 +255,9 @@ describe("EcommScrapping-Flipkart Testing", () => {
         .type(Cypress.env('Pass'), { log: false })
 
 
-        cy.screenshot('Form_afterClickingOnBackButtonAndComingBack')
+       // cy.screenshot('Form_afterClickingOnBackButtonAndComingBack')
 
+       cy.matchImageSnapshot('Form_afterClickingOnBackButtonAndComingBack')
 
         cy.server()
       //   cy.route('POST','**/v1/me/extradetails/profile/flipkartscraping','') 
@@ -265,6 +284,10 @@ describe("EcommScrapping-Flipkart Testing", () => {
         .should('have.css','color','rgb(204, 204, 204)')
 
       //  cy.screenshot('Flipkart-Ecom-Done')
+
+      cy.matchImageSnapshot('Flipkart-Ecom-Done')
+      
+
         cy.wait(1000)
     })
 
@@ -316,7 +339,7 @@ describe("EcommScrapping-Flipkart Testing", () => {
 
     })
 
-    it("pdInProfile: manual", () => {
+    it.only("pdInProfile: manual", () => {
 
 
         cy.server()
@@ -419,7 +442,7 @@ describe("EcommScrapping-Flipkart Testing", () => {
     })
 
 
-    it.only("pdInProfile: disable", () => {
+    it("pdInProfile: disable", () => {
 
         cy.server()
         cy.route('GET', '**/v1/home', 'fixture:home_disable.json')
@@ -450,7 +473,7 @@ describe("EcommScrapping-Flipkart Testing", () => {
             .should('contain', 'Continue Application')
             .click()
 
-        cy.wait(2000)
+        cy.wait(1000)
 
 
 
@@ -466,6 +489,157 @@ describe("EcommScrapping-Flipkart Testing", () => {
         //         .should('contain', 'Additional Information')
 
     })
+
+
+    it("offerStatus: processing", () => {
+        cy.server()
+       // cy.route('GET', '**/v1/home', 'fixture:home_disable.json')
+
+        cy.route({
+            method: 'GET',
+            url: '**/v1/me/extradetails/profile',
+            response: 'fixture:offerStatus_processing.json'
+        })
+
+        cy.wait(5000)
+
+        cy.visit('/' + 'login', { failOnStatusCode: false })
+
+
+        cy.get('.skins__PdtListing-QkWkM.BcfPC').as('loan_info')
+
+
+
+
+        cy.get('@loan_info')
+            .children()
+            .eq(3)
+            .should('contain', 'Continue Application')
+            .click()
+
+        cy.wait(2000)
+
+
+        cy.get('#app > div > div > div > div > div.BPage__BodyCon-hjhObv.giSHwH > div > div > div.skins__SummaryCon-frilyS.hNQNNO').as('profile_summary')
+
+        cy.get('@profile_summary')
+            .children()
+            .eq(4)
+            .should('contain', 'Additional Information')
+            .click()
+        cy.matchImageSnapshot('offerStatus_processing')
+        cy.wait(2000)
+
+        cy.get('#app > div > div > div > div > div.BPage__BodyCon-hjhObv.giSHwH > div.skins__SummaryCon-eWQpKA.gXiRNK').as('Add_info')
+
+
+        // Testing all Ticks
+
+        cy.get('tr > td')
+        .each(($el,i,$org) => {
+            if((i+1)%3==0){
+                cy.wrap($el).children().should('have.css','color','rgb(204, 204, 204)');
+            }
+        })
+
+
+
+
+
+    })
+
+
+    it("offerStatus:apply", () => {
+        cy.server()
+       // cy.route('GET', '**/v1/home', 'fixture:home_disable.json')
+
+        cy.route({
+            method: 'GET',
+            url: '**/v1/me/extradetails/profile',
+            response: 'fixture:offerStatus_apply.json'
+        })
+
+        cy.wait(5000)
+
+        cy.visit('/' + 'login', { failOnStatusCode: false })
+
+
+        cy.get('.skins__PdtListing-QkWkM.BcfPC').as('loan_info')
+
+
+
+
+        cy.get('@loan_info')
+            .children()
+            .eq(3)
+            .should('contain', 'Continue Application')
+            .click()
+
+        cy.wait(2000)
+
+
+        cy.get('#app > div > div > div > div > div.BPage__BodyCon-hjhObv.giSHwH > div > div > div.skins__SummaryCon-frilyS.hNQNNO').as('profile_summary')
+
+        cy.get('@profile_summary')
+            .children()
+            .eq(4)
+            .should('contain', 'Additional Information')
+            .click()
+        cy.matchImageSnapshot('offerStatus_apply')
+        cy.wait(2000)
+
+
+
+
+
+    })
+
+
+    it("offerStatus: retry", () => {
+        cy.server()
+       // cy.route('GET', '**/v1/home', 'fixture:home_disable.json')
+
+        cy.route({
+            method: 'GET',
+            url: '**/v1/me/extradetails/profile',
+            response: 'fixture:offerStatus_retry.json'
+        })
+
+        cy.wait(5000)
+
+        cy.visit('/' + 'login', { failOnStatusCode: false })
+
+
+        cy.get('.skins__PdtListing-QkWkM.BcfPC').as('loan_info')
+
+
+
+
+        cy.get('@loan_info')
+            .children()
+            .eq(3)
+            .should('contain', 'Continue Application')
+            .click()
+
+        cy.wait(2000)
+
+
+        cy.get('#app > div > div > div > div > div.BPage__BodyCon-hjhObv.giSHwH > div > div > div.skins__SummaryCon-frilyS.hNQNNO').as('profile_summary')
+
+        cy.get('@profile_summary')
+            .children()
+            .eq(4)
+            .should('contain', 'Additional Information')
+            .click()
+        cy.matchImageSnapshot('offerStatus_retry')
+        cy.wait(2000)
+
+
+
+
+
+    })
+
 
 
 })    
