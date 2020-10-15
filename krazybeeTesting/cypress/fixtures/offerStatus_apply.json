@@ -1,0 +1,86 @@
+{
+    "code": "200",
+    "message": "Success",
+    "model": {
+        "blockStatus": "enable",
+        "offerType": "mandatory",
+        "availableOffers": [
+            {
+                "offerName": "perfios",
+                "offerStatus": "apply",
+                "reason": "",
+                "offers": null,
+                "Icon": "icic_verifyincome",
+                "Title": "Verify Income",
+                "Desc": "Provide Income details",
+                "ErrorDesc": "Verification failed, please try again",
+                "Operator": ""
+            },
+            {
+                "offerName": "basicMobAuth",
+                "offerStatus": "apply",
+                "reason": "",
+                "offers": null,
+                "Icon": "icmobile_verify",
+                "Title": "Mobile Number Verification",
+                "Desc": "Re-verify your official mobile number",
+                "ErrorDesc": "Verification failed, please try again",
+                "Operator": "idea"
+            },
+            {
+                "offerName": "advanceMobAuth",
+                "offerStatus": "apply",
+                "reason": "",
+                "offers": null,
+                "Icon": "icmobile_verify",
+                "Title": "Advanced Mobile Authentication",
+                "Desc": "Re-verify your official mobile number",
+                "ErrorDesc": "Verification failed, please try again",
+                "Operator": "idea,jio,airtel,vodafone"
+            },
+            {
+                "offerName": "salarySlip",
+                "offerStatus": "apply",
+                "reason": "",
+                "offers": null,
+                "Icon": "icpdfPD",
+                "Title": "Salary Slip Upload",
+                "Desc": "Upload your Salary Slip of last 3 months",
+                "ErrorDesc": "Invalid Salary Slip, please try again",
+                "Operator": ""
+            },
+            {
+                "offerName": "ecommConnect",
+                "offerStatus": "apply",
+                "reason": "",
+                "offers": [
+                    {
+                        "OfferStatus": "data_processing",
+                        "OfferName": "amazonScrapping",
+                        "Reason": "",
+                        "Icon": "icecom_scrap",
+                        "Title": "Use Amazon account",
+                        "Desc": "Re-verify your official mobile number",
+                        "ErrorDesc": "Verification failed, please try again"
+                    }
+                ],
+                "Icon": "icecom_scrap",
+                "Title": "E-commerce Connect",
+                "Desc": "Provide your shopping account details ",
+                "ErrorDesc": "Unable to connect, please try again",
+                "Operator": ""
+            },
+            {
+                "offerName": "paytmScrapping",
+                "offerStatus": "apply",
+                "reason": "",
+                "offers": null,
+                "Icon": "icwallet-pd",
+                "Title": "Sync Wallet details",
+                "Desc": "Provide your paytm account details",
+                "ErrorDesc": "Incorrect account details, please try again",
+                "Operator": ""
+            }
+        ]
+    }
+}
